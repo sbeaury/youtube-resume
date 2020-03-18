@@ -1,5 +1,3 @@
-/*
-
 {
   "manifest_version": 2,
   "name": "Youtube Resumer",
@@ -10,7 +8,7 @@
     "newtab": "index.html"
   },
   "permissions": ["tabs", "*://www.youtube.com/*"],
-  "content_security_policy": "script-src 'self' https://www.youtube.com/iframe_api https://s.ytimg.com/yts/jsbin/www-widgetapi-vflzC3nHZ/www-widgetapi.js 'sha256-bYa5+qTPCwiUjcorwLU5xL8hkt2cfxlYzC1xEaFW6VA='; object-src 'self'",
+  "content_security_policy": "script-src 'self' https://www.youtube.com/iframe_api https://s.ytimg.com/yts/jsbin/www-widgetapi-vflzC3nHZ/www-widgetapi.js https://img.icons8.com/dusk/2x/resume-button.png 'sha256-bYa5+qTPCwiUjcorwLU5xL8hkt2cfxlYzC1xEaFW6VA='; object-src 'self'",
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -18,5 +16,3 @@
     }
   ]
 }
-
-*/

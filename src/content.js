@@ -8,9 +8,10 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      arrayVideos: [],
+      url: "",
       currentMin: 0,
-      currentSec: 0,
-      url: ""
+      currentSec: 0
     };
   }
 
@@ -20,8 +21,10 @@ class Main extends React.Component {
     };
 
     chrome.tabs.query(queryInfo, result => {
+      let arrayVideosCopy = [];
       for (let i = 0; i < result.length; i++) {
-        this.setState({ url: result[i].url });
+        let url = result[i].url;
+        console.log(url);
         chrome.tabs.executeScript(
           result[i].id,
           { code: 'document.querySelector("video").currentTime' },
@@ -29,7 +32,13 @@ class Main extends React.Component {
             const time = results && results[0];
             const minute = Math.round(time / 60);
             const second = Math.round(time % 60);
-            this.setState({ currentMin: minute, currentSec: second });
+            arrayVideosCopy.push({
+              url: url,
+              currentMin: minute,
+              currentSec: second
+            });
+            this.setState({ arrayVideos: arrayVideosCopy });
+            console.log(this.state.arrayVideos);
           }
         );
       }
@@ -37,12 +46,23 @@ class Main extends React.Component {
   }
 
   render() {
-    const { url, currentSec, currentMin } = this.state;
+    const { arrayVideos } = this.state;
     return (
-      <div>
-        <h1>Hello world - My first Extension</h1>
-        <ReactPlayer url={`${url}&t=${currentMin}m${currentSec}s`} />
-      </div>
+      <>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <img src="https://img.icons8.com/dusk/2x/resume-button.png" />
+        </div>
+        <div>
+          {arrayVideos.map(object => {
+            return (
+              <ReactPlayer
+                url={`${object.url}&t=${object.currentMin}m${object.currentSec}s`}
+                width="30%"
+              />
+            );
+          })}
+        </div>
+      </>
     );
   }
 }
