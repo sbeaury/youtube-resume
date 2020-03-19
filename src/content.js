@@ -3,6 +3,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ReactPlayer from "react-player";
+import { css } from "emotion";
 
 class Main extends React.Component {
   constructor(props) {
@@ -49,15 +50,31 @@ class Main extends React.Component {
     const { arrayVideos } = this.state;
     return (
       <>
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          className={css`
+            display: flex;
+            justify-content: center;
+          `}
+        >
           <img src="https://img.icons8.com/dusk/2x/resume-button.png" />
         </div>
-        <div>
+        <div
+          className={css`
+            display: flex;
+            justify-content: center;
+          `}
+        >
           {arrayVideos.map(object => {
             return (
               <ReactPlayer
                 url={`${object.url}&t=${object.currentMin}m${object.currentSec}s`}
-                width="30%"
+                className={css`
+                  width: 20%;
+                  margin: 1rem;
+                  border: 3px solid #333333;
+                  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+                  }
+                `}
               />
             );
           })}
