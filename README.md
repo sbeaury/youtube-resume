@@ -2,9 +2,7 @@
 
 Don't let your YouTube browsing history fade away
 
-Based on <img src="https://www.pngfind.com/pngs/m/638-6386507_10-years-of-experience-react-native-logo-svg.png" width="200">
-
-
+Based on <img src="https://pngimage.net/wp-content/uploads/2018/06/react-logo-png-6.png" width="50">
 
 ## Installation
 >Make sure you have latest **NodeJs** version installed
