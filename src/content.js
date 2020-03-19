@@ -53,10 +53,27 @@ class Main extends React.Component {
         <div
           className={css`
             display: flex;
+            flex-direction: column;
             justify-content: center;
           `}
         >
-          <img src="https://img.icons8.com/dusk/2x/resume-button.png" />
+          <div
+          className={css`
+            margin:auto;
+          `}>
+            <img src="https://img.icons8.com/dusk/2x/youtube-play.png" />
+          </div>
+          <div className={css`
+            margin:auto;
+          `}>
+          <h1
+            className={css`
+              font-family: "Open Sans";
+            `}
+          >
+            Don't let your YouTube browsing history fade away
+          </h1>
+          </div>
         </div>
         <div
           className={css`
