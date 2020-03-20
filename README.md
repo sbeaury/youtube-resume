@@ -2,27 +2,30 @@
 
 Don't let your YouTube browsing history fade away
 
-<img src="https://cdn.auth0.com/blog/react-js/react.png" width="50"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Chrome_icon_%28September_2014%29.svg/1024px-Google_Chrome_icon_%28September_2014%29.svg.png" width="50">
-
-
+<img src="https://cdn.auth0.com/blog/react-js/react.png" width="50"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Chrome_icon_%28September_2014%29.svg/1024px-Google_Chrome_icon_%28September_2014%29.svg.png" width="48">
 
 ## Installation
->Make sure you have latest **NodeJs** version installed
+
+> Make sure you have latest **NodeJs** version installed
 
 Clone repo
 
 ```
 git clone git@github.com:sbeaury/youtube-resume.git
 ```
+
 Go to `youtube-resume` directory run
 
 ```
 yarn install
 ```
+
 Now build the extension using
+
 ```
 yarn build
 ```
+
 You will see a `build` folder generated inside `[PROJECT_HOME]`
 
 ## Adding React app extension to Chrome
@@ -33,11 +36,9 @@ Now click on the `LOAD UNPACKED` and browse to `[PROJECT_HOME]\build`. This will
 
 When opening a new tab, extension will be triggered.
 
-
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/sbeaury/youtube-resume. 
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/sbeaury/youtube-resume.
 
 ## License
 
