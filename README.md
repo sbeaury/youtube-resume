@@ -2,7 +2,7 @@
 
 Don't let your YouTube browsing history fade away
 
-<img src="https://cdn.auth0.com/blog/react-js/react.png" width="50"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Chrome_icon_%28September_2014%29.svg/1024px-Google_Chrome_icon_%28September_2014%29.svg.png" width="46">
+<img src="https://cdn.auth0.com/blog/react-js/react.png" =50x50> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Chrome_icon_%28September_2014%29.svg/1024px-Google_Chrome_icon_%28September_2014%29.svg.png" =50x50>
 
 ## Installation
 
