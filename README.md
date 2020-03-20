@@ -2,7 +2,9 @@
 
 Don't let your YouTube browsing history fade away
 
-<img src="https://cdn.auth0.com/blog/react-js/react.png" width="50"> <img src="https://img.pngio.com/button-plus-icon-icon-plus-symbol-png-and-vector-with-plus-icon-png-640_640.png" width="20"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Chrome_icon_%28September_2014%29.svg/1024px-Google_Chrome_icon_%28September_2014%29.svg.png" width="45">
+<table><tr><td vlign="center"><img src="https://cdn.auth0.com/blog/react-js/react.png" width="50"> <img src="https://img.pngio.com/button-plus-icon-icon-plus-symbol-png-and-vector-with-plus-icon-png-640_640.png" width="20"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Chrome_icon_%28September_2014%29.svg/1024px-Google_Chrome_icon_%28September_2014%29.svg.png" width="45"> </td></tr></table>
+
+
 
 ## Installation
 >Make sure you have latest **NodeJs** version installed
