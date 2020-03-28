@@ -31,7 +31,7 @@ class Main extends React.Component {
     };
 
     chrome.tabs.query(queryInfo, result => {
-      let arrayVideos = [];
+      let arrayVideos = [...this.state.videos];
       for (let i = 0; i < result.length; i++) {
         let url = result[i].url;
         console.log(url);
@@ -50,10 +50,8 @@ class Main extends React.Component {
 
             this.setState({ videos: arrayVideos });
 
-            const { videos } = this.state;
-
             chrome.storage.sync.set(
-              { myKey: videos },
+              { myKey: this.state.videos },
               console.log("Video array saved!")
             );
           }
