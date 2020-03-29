@@ -29,7 +29,7 @@ const removeDuplicates = arrayOfObjects => {
   );
 };
 
-class Main extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -201,4 +201,4 @@ class Main extends React.Component {
   }
 }
 
-ReactDOM.render(<Main />, document.getElementById("root"));
+export default App;
