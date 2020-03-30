@@ -6,6 +6,9 @@ import ReactPlayer from "react-player";
 import { css } from "emotion";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
+import TabIcon from "@material-ui/icons/Tab";
+import "react-tippy/dist/tippy.css";
+import { Tooltip } from "react-tippy";
 
 const getLocalStorageValue = async key => {
   return new Promise((resolve, reject) => {
@@ -39,10 +42,8 @@ class App extends React.Component {
 
   componentDidMount() {
     getLocalStorageValue("myKey").then(result => {
-      if (result.myKey.length > 0) {
+      if (result.myKey !== undefined) {
         this.setState({ videos: result.myKey });
-      } else {
-        this.setState({ videos: [] });
       }
     });
 
@@ -52,11 +53,11 @@ class App extends React.Component {
 
     chrome.tabs.query(queryInfo, result => {
       let arrayVideos = removeDuplicates([...this.state.videos]);
-      console.log(result);
-      if (result) {
+      console.log("arrayVideos", arrayVideos);
+      if (result !== undefined) {
         for (let i = 0; i < result.length; i++) {
           let url = result[i].url;
-          console.log(url);
+          console.log("result:", result, "url:", url);
           chrome.tabs.executeScript(
             result[i].id,
             { code: 'document.querySelector("video").currentTime' },
@@ -64,11 +65,15 @@ class App extends React.Component {
               const time = results && results[0];
               const minute = Math.round(time / 60);
               const second = Math.round(time % 60);
-              arrayVideos.push({
+              let arrayOfObjects = Object.assign(...arrayVideos, {
                 url: url,
                 currentMin: minute,
                 currentSec: second
               });
+
+              arrayVideos = removeDuplicates([arrayOfObjects]);
+
+              console.log("arrayVideos after update:", arrayVideos);
 
               this.setState({ videos: arrayVideos });
 
@@ -141,12 +146,39 @@ class App extends React.Component {
             <div
               className={css`
                 display: flex;
+                flex-direction: row;
                 justify-content: center;
+                margin-bottom: 3rem;
               `}
             >
-              <IconButton aria-label="delete">
-                <DeleteIcon onClick={this.handleClearCache} />
-              </IconButton>
+              <Tooltip
+                title="Clear history"
+                position="bottom"
+                trigger="mouseenter"
+                arrow={false}
+              >
+                <IconButton aria-label="delete">
+                  <DeleteIcon onClick={this.handleClearCache} />
+                </IconButton>
+              </Tooltip>
+              <Tooltip
+                title="Default Chrome tab"
+                position="bottom"
+                trigger="mouseenter"
+                arrow={false}
+              >
+                <IconButton aria-label="delete">
+                  <TabIcon
+                    onClick={() => {
+                      chrome.tabs.getCurrent(tab => {
+                        chrome.tabs.update(tab.id, {
+                          url: "chrome-search://local-ntp/local-ntp.html"
+                        });
+                      });
+                    }}
+                  />
+                </IconButton>
+              </Tooltip>
             </div>
           )}
         </div>
