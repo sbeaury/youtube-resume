@@ -1,8 +1,10 @@
 # Youtube Resume Chrome Extension
 
-Don't let your YouTube browsing history fade away
+Don't let your YouTube browsing history fade away. YouTube Resume Tab replace the default browser new tab screen with your previous YouTube videos paused. Just click on the video to resume watching.
 
-<img src="https://cdn.auth0.com/blog/react-js/react.png" width="50" height="50"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Chrome_icon_%28September_2014%29.svg/1024px-Google_Chrome_icon_%28September_2014%29.svg.png" width="50" height="50">
+Built with <img src="https://cdn.auth0.com/blog/react-js/react.png" width="50" height="50">
+
+![screenshot](./images/screenshot.jpg)
 
 ## Installation
 
@@ -35,6 +37,10 @@ In Chrome browser, go to chrome://extensions page and switch on developer mode. 
 Now click on the `LOAD UNPACKED` and browse to `[PROJECT_HOME]\build`. This will install the React app as a Chrome extension.
 
 When opening a new tab, extension will be triggered.
+
+## Feedback
+
+Just write me an [email](mailto:sbeaury@gmail.com), or create an [issue](issues).
 
 ## Contributing
 

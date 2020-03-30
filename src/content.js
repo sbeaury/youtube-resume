@@ -73,8 +73,6 @@ class App extends React.Component {
 
               arrayVideos = removeDuplicates([arrayOfObjects]);
 
-              console.log("arrayVideos after update:", arrayVideos);
-
               this.setState({ videos: arrayVideos });
 
               chrome.storage.sync.set(
@@ -90,6 +88,7 @@ class App extends React.Component {
 
   handleClearCache = () => {
     chrome.storage.sync.remove("myKey", () => {
+      window.location.reload();
       console.log("Cache has been cleared");
     });
   };
@@ -113,6 +112,7 @@ class App extends React.Component {
           height: 100%;
           background-attachment: fixed
           color: black;
+          font-family: "Open Sans";    
         `}
       >
         <div
@@ -134,13 +134,7 @@ class App extends React.Component {
               margin: auto;
             `}
           >
-            <h1
-              className={css`
-                font-family: "Open Sans";
-              `}
-            >
-              Don't let your YouTube browsing history fade away
-            </h1>
+            <h1>Don't let your YouTube browsing history fade away</h1>
           </div>
           {videos.length === 0 ? null : (
             <div
@@ -188,13 +182,21 @@ class App extends React.Component {
             flex-direction: row;
             flex-wrap: wrap;
             width: 90%;
-            height: 80vh;
+            height: 70vh;
             justify-content: center;
             margin: auto;
             background-size: cover;
           `}
         >
-          {videos ? (
+          {videos.length === 0 ? (
+            <div
+              className={css`
+                margin: auto;
+              `}
+            >
+              <img src="https://img.icons8.com/nolan/2x/empty-box.png" />
+            </div>
+          ) : videos ? (
             videos.map(object => {
               return (
                 <ReactPlayer
@@ -210,24 +212,58 @@ class App extends React.Component {
               );
             })
           ) : (
-            <p
+            <h1
               className={css`
                 margin: auto;
               `}
             >
               Something went wrong ¯\_(ツ)_/¯
-            </p>
+            </h1>
           )}
-          {videos.length === 0 ? (
-            <div
+        </div>
+        <footer
+          className={css`
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
+          `}
+        >
+          <span>
+            © {new Date().getFullYear()}{" "}
+            <a
+              href="https://github.com/sbeaury/"
               className={css`
-                margin: auto;
+                display: flex;
+                justify-content: center;
+                font-weight: bold;
+                font-size: 1rem;
+              `}
+              className={css`
+                color: inherit;
+                text-decoration: none !important;
+                &:hover {
+                  color: #916c9c;
+                }
               `}
             >
-              <img src="https://img.icons8.com/nolan/2x/empty-box.png" />
-            </div>
-          ) : null}
-        </div>
+              Sebastien Beaury
+            </a>
+            , Built with{" "}
+            <a
+              href="https://reactjs.org/"
+              className={css`
+                color: inherit;
+                text-decoration: none !important;
+                &:hover {
+                  color: #916c9c;
+                }
+              `}
+            >
+              React
+            </a>
+          </span>
+        </footer>
       </div>
     );
   }
