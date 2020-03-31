@@ -3,9 +3,10 @@
 Don't let your YouTube browsing history fade away. YouTube Resume Tab replace the default browser new tab screen with your previous YouTube videos paused. Just click on the video to resume watching.
 
 Built with
-<img src="https://cdn.auth0.com/blog/react-js/react.png" width="50" height="50">
+<img src="https://cdn.auth0.com/blog/react-js/react.png" width="25" height="25">
 
 ![screenshot](./images/screenshot_1.png)
+![screenshot](./images/screenshot_2.png)
 
 ## Installation
 

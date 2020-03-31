@@ -12,7 +12,7 @@
     "default_icon": "youtube-play.png",
     "default_title": "Youtube Resumer"
   },
-  "content_security_policy": "script-src 'self' https://www.youtube.com/iframe_api https://s.ytimg.com/yts/jsbin/www-widgetapi-vfln21F5R/www-widgetapi.js https://img.icons8.com/dusk/2x/youtube-play.png 'sha256-bYa5+qTPCwiUjcorwLU5xL8hkt2cfxlYzC1xEaFW6VA='; object-src 'self'",
+  "content_security_policy": "script-src 'self' https://www.youtube.com/iframe_api https://s.ytimg.com/yts/jsbin/www-widgetapi-vflEtXIPQ/www-widgetapi.js https://img.icons8.com/dusk/2x/youtube-play.png 'sha256-bYa5+qTPCwiUjcorwLU5xL8hkt2cfxlYzC1xEaFW6VA='; object-src 'self'",
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
