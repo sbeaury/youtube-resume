@@ -6,6 +6,7 @@ Built with React.
 
 ![screenshot](./images/screenshot_1.png)
 ![screenshot](./images/screenshot_2.png)
+![screenshot](./images/demo.gif)
 
 ## Installation
 
