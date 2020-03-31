@@ -23,13 +23,12 @@ const getLocalStorageValue = async key => {
 };
 
 const removeDuplicates = arrayOfObjects => {
-  return arrayOfObjects.filter(
-    (object, index) =>
-      index ===
-      arrayOfObjects.findIndex(
-        obj => JSON.stringify(obj) === JSON.stringify(object)
-      )
-  );
+  if (typeof arrayOfObjects !== undefined) {
+    return arrayOfObjects.filter(
+      (object, index) =>
+        index === arrayOfObjects.findIndex(obj => obj.url === object.url)
+    );
+  }
 };
 
 class App extends React.Component {
@@ -52,8 +51,7 @@ class App extends React.Component {
     };
 
     chrome.tabs.query(queryInfo, result => {
-      let arrayVideos = removeDuplicates([...this.state.videos]);
-      console.log("arrayVideos", arrayVideos);
+      let arrayVideos = removeDuplicates(this.state.videos);
       if (result !== undefined) {
         for (let i = 0; i < result.length; i++) {
           let url = result[i].url;
@@ -65,13 +63,18 @@ class App extends React.Component {
               const time = results && results[0];
               const minute = Math.round(time / 60);
               const second = Math.round(time % 60);
-              let arrayOfObjects = Object.assign(...arrayVideos, {
-                url: url,
-                currentMin: minute,
-                currentSec: second
-              });
 
-              arrayVideos = removeDuplicates([arrayOfObjects]);
+              arrayVideos = [
+                ...arrayVideos,
+                {
+                  url: url,
+                  currentMin: minute,
+                  currentSec: second
+                }
+              ];
+              console.log("arrayVideos:", arrayVideos);
+
+              arrayVideos = removeDuplicates(arrayVideos);
 
               this.setState({ videos: arrayVideos });
 
@@ -227,6 +230,7 @@ class App extends React.Component {
             justify-content: center;
             font-weight: bold;
             font-size: 1rem;
+            margin-bottom: 0.5rem;
           `}
         >
           <span>
