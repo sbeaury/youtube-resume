@@ -4,8 +4,8 @@ Don't let your YouTube browsing history fade away. YouTube Resume Tab replace th
 
 Built with React.
 
-![screenshot](./images/screenshot_1.png | width=30)
-![screenshot](./images/screenshot_2.png | width=30)
+![screenshot](./images/screenshot_1.png)
+![screenshot](./images/screenshot_2.png)
 
 ## Installation
 
