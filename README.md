@@ -9,6 +9,12 @@ Built with React.
 
 ## Installation
 
+### Install through Chrome Web Store
+
+[![https://chrome.google.com/webstore/detail/youtube-resume/fkpmbbdgedgcpolfhedngemgnenfokid](https://raw.githubusercontent.com/tulios/json-viewer/master/tryitnow.png)](https://chrome.google.com/webstore/detail/youtube-resume/fkpmbbdgedgcpolfhedngemgnenfokid)
+
+### Install through Developer Mode
+
 > Make sure you have latest **NodeJs** version installed
 
 Clone repo
